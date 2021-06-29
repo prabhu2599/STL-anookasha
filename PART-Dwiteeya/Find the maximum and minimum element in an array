@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void maxMin(vector<int> v) {
+    int maxu=-1,minu=10000;
+    for(int i: v) {
+        if(minu > i)
+            minu = i;
+        if(maxu < i )
+            maxu = i;
+    }
+    cout<<maxu<<" - "<<minu;
+}
+
+void printu(vector<int> v) {
+    for(int i: v) {
+        cout<<i<<" ";
+    }
+}
+
+int main() {
+    vector<int> v = {1,2,3,4,5};
+    reverse(v.begin(),v.end());
+    printu(v);
+    cout<<"\n";
+    maxMin(v);
+    return 0;
+}
